@@ -7,9 +7,20 @@
 ## M0 — Foundation
 
 - `M0-001` Bootstrap Flutter، بنية المجلدات، RTL والثيمات. `COMPLETE`
-- `M0-002` GitHub، CI، حماية الأسرار وقوالب PR. `IN_PROGRESS`
+- `M0-002` GitHub، CI، حماية الأسرار وقوالب PR. `BLOCKED`
+  - المستودع الخاص وملفات الـCI وقوالب PR جاهزة ومرفوعة.
+  - فشل تشغيل GitHub Actions رقم `42679347424` قبل أي خطوة لأن حساب GitHub
+    يحتاج معالجة دفعة حديثة أو رفع حد الإنفاق؛ الاختبارات والبناء المحليان ناجحان.
 - `M0-003` PRD، المعمارية وThreat Model. `COMPLETE`
 - `M0-004` Supabase local structure ومخطط أولي بلا Production. `PLANNED`
+
+## التشغيل المستمر
+
+- مشروع `etihad-omlak` مفتوح في Antigravity ويستخدم `.agents/skills` وContext7.
+- تكامل Claude و27 skill wrapper جاهز؛ أول تشغيل ينتظر موافقة بشرية على
+  Workspace Trust وContext7 project MCP.
+- مراقب Codex المحلي نشط مرتين يوميًا، وينفذ مهمة آمنة واحدة على فرع مستقل
+  دون دمج تلقائي للتغييرات الحساسة.
 
 ## M1 — الهوية وعزل العمارات
 

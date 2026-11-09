@@ -1,5 +1,16 @@
 # Claude coordinator automation
 
+## التشغيل الأول
+
+من PowerShell داخل المستودع شغّل:
+
+```powershell
+.\scripts\start-claude-coordinator.ps1
+```
+
+وافق بنفسك فقط إذا كنت تثق في مجلد المشروع، ثم راجع طلب تفعيل Context7.
+السكريبت لا يتجاوز Workspace Trust ولا يوافق على MCP تلقائيًا.
+
 ## المهمة المستمرة
 
 اقرأ `CLAUDE.md` و`docs/plan/UNIFIED_PLAN.md` ثم اختر أصغر مهمة `READY` أو
@@ -13,6 +24,8 @@
 - Strix ساكن فقط؛ أي اختبار نشط أو managed upload يحتاج موافقة جديدة منفصلة.
 - 21st يبقى معطلًا حتى يتوفر مفتاح خارج Git.
 - أبلغ فقط عند نجاح مرحلة، فشل CI، blocker متكرر، أو قرار مطلوب.
+- لا تعتبر GitHub Actions ناجحًا قبل مرور Secret scan وFlutter checks فعلًا؛
+  مشكلة الدفع أو حد الإنفاق عائق حساب خارجي وليست نتيجة اختبار.
 
 ## أدلة كل تشغيل
 

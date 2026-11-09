@@ -5,5 +5,6 @@
 | L-001 | 2026-11-07 | Owner | إنشاء تطبيق اتحاد ملاك مغلق مع مالية وأخبار وتصويت وصلاحيات ودفع | أُنشئ نطاق المنتج وخطة M0–M5 |
 | L-002 | 2026-11-07 | Coordinator | تهيئة Flutter وAntigravity skills وGraphify | Flutter shell واختبارات أولية و895 عقدة Graphify؛ GitHub قيد الرفع |
 | L-003 | 2026-11-09 | Coordinator | إغلاق مراجعة M0 وربط Claude بالمشروع | Router فعلي، 4 اختبارات ناجحة، APK Debug ناجح، 925 عقدة و888 علاقة في Graphify، Claude skills وContext7 project MCP جاهزان للموافقة |
+| L-004 | 2026-11-09 | Coordinator | رفع الأساس وتفعيل التشغيل المستمر | المستودع الخاص مرفوع عند `3a3364b`، Antigravity فتح المشروع، ومراقب Codex نشط مرتين يوميًا؛ GitHub Actions محجوب بفوترة الحساب وClaude ينتظر موافقة الثقة وContext7 |
 
 كل handoff جديد يسجل الهدف والفرع والـcommit والاختبارات والمخاطر والقرارات المطلوبة.
