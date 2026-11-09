@@ -7,10 +7,9 @@
 ## M0 — Foundation
 
 - `M0-001` Bootstrap Flutter، بنية المجلدات، RTL والثيمات. `COMPLETE`
-- `M0-002` GitHub، CI، حماية الأسرار وقوالب PR. `BLOCKED`
-  - المستودع الخاص وملفات الـCI وقوالب PR جاهزة ومرفوعة.
-  - فشل تشغيل GitHub Actions رقم `42679347424` قبل أي خطوة لأن حساب GitHub
-    يحتاج معالجة دفعة حديثة أو رفع حد الإنفاق؛ الاختبارات والبناء المحليان ناجحان.
+- `M0-002` GitHub، CI، حماية الأسرار وقوالب PR. `COMPLETE`
+  - GitHub Actions رقم `42698268081` نجح على commit `822ec20`.
+  - Secret scan وعزل Strix وFlutter format/analyze/tests وبناء APK كلها ناجحة.
 - `M0-003` PRD، المعمارية وThreat Model. `COMPLETE`
 - `M0-004` Supabase local structure ومخطط أولي بلا Production. `PLANNED`
 
