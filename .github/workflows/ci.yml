@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enforce Strix quarantine
+        shell: bash
+        run: |
+          matches="$(grep -RIl --include='SKILL.md' \
+            '^[[:space:]]*author:[[:space:]]*usestrix' .agents/skills || true)"
+          if [[ -n "$matches" ]]; then
+            printf 'Active upstream Strix skills are not allowed:\n%s\n' "$matches" >&2
+            exit 1
+          fi
+          test -f .agents/skills/strix-static-review/SKILL.md
+
+  mobile:
+    name: Flutter checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v6
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.9
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build apk --debug

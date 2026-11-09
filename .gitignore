@@ -1,0 +1,36 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+build-stale-*/
+coverage/
+*.iml
+.metadata
+!apps/mobile/.metadata
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+supabase/.temp/
+
+# Agent and analysis output
+graphify-out/
+.graphify/
+strix-output/
+artifacts/

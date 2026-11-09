@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "context7": {
+      "serverUrl": "https://mcp.context7.com/mcp",
+      "enabledTools": [
+        "resolve-library-id",
+        "query-docs"
+      ],
+      "disabled": false,
+      "timeoutSeconds": 120
+    },
+    "21st": {
+      "serverUrl": "https://21st.dev/api/mcp",
+      "disabled": true,
+      "timeoutSeconds": 120
+    }
+  }
+}
