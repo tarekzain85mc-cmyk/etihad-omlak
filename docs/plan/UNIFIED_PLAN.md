@@ -11,13 +11,13 @@
   - GitHub Actions رقم `42698268081` نجح على commit `822ec20`.
   - Secret scan وعزل Strix وFlutter format/analyze/tests وبناء APK كلها ناجحة.
 - `M0-003` PRD، المعمارية وThreat Model. `COMPLETE`
-- `M0-004` Supabase local structure ومخطط أولي بلا Production. `PLANNED`
+- `M0-004` Supabase local structure ومخطط أولي بلا Production. `IN_PROGRESS`
 
 ## التشغيل المستمر
 
 - مشروع `etihad-omlak` مفتوح في Antigravity ويستخدم `.agents/skills` وContext7.
-- تكامل Claude و27 skill wrapper جاهز؛ أول تشغيل ينتظر موافقة بشرية على
-  Workspace Trust وContext7 project MCP.
+- منسق Claude Cloud مجدول يوميًا للمستودع؛ مهارات Claude المحلية وContext7
+  project MCP ما زالتا تتطلبان موافقة Workspace Trust وMCP داخل الجلسة المحلية.
 - مراقب Codex المحلي نشط مرتين يوميًا، وينفذ مهمة آمنة واحدة على فرع مستقل
   دون دمج تلقائي للتغييرات الحساسة.
 
@@ -25,7 +25,7 @@
 
 - تسجيل البريد/الهاتف، الاسترجاع وOTP.
 - العمارات والوحدات والدعوات المغلقة.
-- RBAC وRLS واختبارات العزل.
+- استكمال RBAC/RLS وRPC الذرية واختبارات العزل والتزامن.
 
 ## M2 — المالية والشفافية
 
