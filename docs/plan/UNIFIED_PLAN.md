@@ -14,7 +14,8 @@
 - `M0-004` Supabase local structure ومخطط أولي بلا Production. `REVIEW`
   - [PR #1 المسودة](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/1)
     على فرع `phase/M0-004-supabase-foundation`؛ Database Tests
-    `42788789565` وCI `42788790731` نجحا على `eff09de`.
+    `42830636905` وCI `42830637131` نجحا على `8198709`، بما فيها 290 اختبار
+    pgTAP؛ تغطي المصفوفة قراءة الأدوار السبعة، وتبقى اختبارات التغيير والتزامن في M1.
   - لا دمج أو تطبيق على Production قبل مراجعة بشرية للمخطط وRLS.
 - `M0-005` حفظ الثيم المختار محليًا عبر إعادة تشغيل التطبيق. `COMPLETE`
   - [PR #2](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/2)؛

@@ -62,6 +62,13 @@
 - تشغيل [CI #42788019418](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42788019418)
   نجح على commit نفسه: Secret scan، عزل Strix، Flutter format/analyze/test،
   وبناء APK Debug.
+- على commit `8198709`: تشغيل [Database Tests #42830636905](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42830636905)
+  نجح في 290 assertion: 30 للمخطط، 36 للعزل والقيود الأصلية، و224 لمصفوفة
+  قراءة الأدوار السبعة × عمارتين × ثمانية جداول × داخل/خارج العمارة.
+  اختبار المصفوفة فقط أُضيف؛ لم تتغير migration. تشغيل
+  [CI #42830637131](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42830637131)
+  نجح على commit نفسه: فحص الأسرار وFlutter format/analyze/test وبناء APK Debug.
+  ملف المصفوفة اجتاز `pglast` محليًا، وGraphify حدّث الرسم code-only محليًا.
 - التشغيل الأول `42787497307` فشل بسبب وضع `UPDATE` داخل تعبير pgTAP غير صالح؛
   صُحح في `9c8eeb8`، ثم نجح التشغيل التالي. لا توجد دورة TDD حمراء/خضراء محلية
   لأن Docker غير متاح.
@@ -74,6 +81,8 @@
   هاتف موثق، واشتراط `manage_roles` قبل أي دور مميز.
 - ربط البريد/الهاتف الموثق من Supabase Auth.
 - اختبارات عميل end-to-end ودورة الدعوة كاملة.
+- المصفوفة الحالية تثبت SELECT فقط؛ اختبارات تغيير البيانات والتزامن، ولا سيما
+  سباق سحب آخر Admin/President، مطلوبة مع RPC في M1 قبل إطلاق الخدمة.
 
 ## الرجوع
 
