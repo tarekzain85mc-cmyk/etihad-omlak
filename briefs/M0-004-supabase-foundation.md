@@ -55,10 +55,16 @@
 - `git diff --check`: مطلوب قبل كل commit.
 - Graphify: تحديث محلي بعد التغيير؛ مخرجات `graphify-out/` غير مرفوعة.
 - مراجعة Strix الساكنة: محلية فقط، بلا تشغيل Strix أو رفع مصدر أو فحص هدف حي.
-- اختبارات قاعدة البيانات: 30 assertion للمخطط و34 للعزل/القيود مصممة، لكن
-  لا يُسجل نجاحها قبل تشغيل GitHub Actions؛ Docker غير متاح محليًا على الجهاز.
-- دليل GitHub Actions والـcommit: يضافان هنا بعد نجاح CI وقبل نقل المهمة إلى
-  `REVIEW`.
+- Docker غير متاح محليًا؛ PostgreSQL parser (`pglast`) نجح على ملفات SQL الأربعة.
+- على commit `9c8eeb8`: تشغيل [Database Tests #42788019576](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42788019576)
+  نجح: `supabase start` و`db reset` و`db lint` و`test db`، بما فيها 30 assertion
+  للمخطط و36 للعزل/القيود.
+- تشغيل [CI #42788019418](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42788019418)
+  نجح على commit نفسه: Secret scan، عزل Strix، Flutter format/analyze/test،
+  وبناء APK Debug.
+- التشغيل الأول `42787497307` فشل بسبب وضع `UPDATE` داخل تعبير pgTAP غير صالح؛
+  صُحح في `9c8eeb8`، ثم نجح التشغيل التالي. لا توجد دورة TDD حمراء/خضراء محلية
+  لأن Docker غير متاح.
 
 ## مؤجل إلى M1
 

@@ -11,7 +11,11 @@
   - GitHub Actions رقم `42698268081` نجح على commit `822ec20`.
   - Secret scan وعزل Strix وFlutter format/analyze/tests وبناء APK كلها ناجحة.
 - `M0-003` PRD، المعمارية وThreat Model. `COMPLETE`
-- `M0-004` Supabase local structure ومخطط أولي بلا Production. `IN_PROGRESS`
+- `M0-004` Supabase local structure ومخطط أولي بلا Production. `REVIEW`
+  - [PR #1 المسودة](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/1)
+    على فرع `phase/M0-004-supabase-foundation`؛ Database Tests
+    `42788019576` وCI `42788019418` نجحا على `9c8eeb8`.
+  - لا دمج أو تطبيق على Production قبل مراجعة بشرية للمخطط وRLS.
 
 ## التشغيل المستمر
 

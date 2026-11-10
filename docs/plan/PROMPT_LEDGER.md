@@ -7,6 +7,6 @@
 | L-003 | 2026-11-09 | Coordinator | إغلاق مراجعة M0 وربط Claude بالمشروع | Router فعلي، 4 اختبارات ناجحة، APK Debug ناجح، 925 عقدة و888 علاقة في Graphify، Claude skills وContext7 project MCP جاهزان للموافقة |
 | L-004 | 2026-11-09 | Coordinator | رفع الأساس وتفعيل التشغيل المستمر | المستودع الخاص مرفوع عند `3a3364b`، Antigravity فتح المشروع، ومراقب Codex نشط مرتين يوميًا؛ GitHub Actions محجوب بفوترة الحساب وClaude ينتظر موافقة الثقة وContext7 |
 | L-005 | 2026-11-09 | Coordinator | التحقق بعد إصلاح GitHub | تشغيل CI رقم `42698268081` نجح كاملًا على `822ec20`: الأسرار وعزل Strix والتنسيق والتحليل و4 اختبارات وبناء APK |
-| L-006 | 2026-11-10 | Coordinator | تنفيذ أساس Supabase المحلي `M0-004` على `phase/M0-004-supabase-foundation` | Migration وRLS واختبارات عزل عمارتين ومراجعة ساكنة؛ SQL syntax صالح، Docker غير متاح محليًا؛ commit وPR ونتيجة CI قيد التحقق. خطر التزامن عند تغيير آخر قائد مؤجل كشرط إطلاق M1، ولا دمج تلقائي. |
+| L-006 | 2026-11-10 | Coordinator | تنفيذ أساس Supabase المحلي `M0-004` على `phase/M0-004-supabase-foundation` | commit `9c8eeb8` و[PR #1 المسودة](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/1)؛ Database Tests `42788019576` وCI `42788019418` نجحا. خطر التزامن عند تغيير آخر قائد شرط إطلاق M1، والقرار المطلوب مراجعة بشرية قبل الدمج. |
 
 كل handoff جديد يسجل الهدف والفرع والـcommit والاختبارات والمخاطر والقرارات المطلوبة.
