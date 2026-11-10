@@ -2,7 +2,7 @@ begin;
 
 create extension if not exists pgtap with schema extensions;
 
-select plan(34);
+select plan(36);
 
 insert into auth.users (id, email, raw_user_meta_data) values
   (
@@ -444,18 +444,21 @@ select is(
   0::bigint,
   'resident cannot see audit events'
 );
+select lives_ok(
+  $$
+    update public.profiles
+    set display_name = 'Changed by self'
+    where user_id = '10000000-0000-0000-0000-000000000002'
+  $$,
+  'resident can submit an update to their own profile'
+);
 select is(
   (
-    with changed as (
-      update public.profiles
-      set display_name = 'Changed by self'
-      where user_id = '10000000-0000-0000-0000-000000000002'
-      returning 1
-    )
-    select count(*) from changed
+    select display_name from public.profiles
+    where user_id = '10000000-0000-0000-0000-000000000002'
   ),
-  1::bigint,
-  'resident can update their own profile'
+  'Changed by self',
+  'own profile update is visible to the resident'
 );
 select throws_ok(
   $$
@@ -467,18 +470,13 @@ select throws_ok(
   null,
   'profile display names must be stored without surrounding whitespace'
 );
-select is(
-  (
-    with changed as (
-      update public.profiles
-      set display_name = 'Unauthorized change'
-      where user_id = '20000000-0000-0000-0000-000000000002'
-      returning 1
-    )
-    select count(*) from changed
-  ),
-  0::bigint,
-  'resident cannot update another profile'
+select lives_ok(
+  $$
+    update public.profiles
+    set display_name = 'Unauthorized change'
+    where user_id = '20000000-0000-0000-0000-000000000002'
+  $$,
+  'cross-building profile update completes without exposing a row'
 );
 select throws_ok(
   $$
@@ -560,6 +558,14 @@ select throws_ok(
 );
 
 reset role;
+select is(
+  (
+    select display_name from public.profiles
+    where user_id = '20000000-0000-0000-0000-000000000002'
+  ),
+  'Resident B',
+  'resident did not change the profile in building B'
+);
 set local role authenticated;
 select set_config(
   'request.jwt.claim.sub',
