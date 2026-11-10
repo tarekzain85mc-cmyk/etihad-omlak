@@ -8,13 +8,17 @@
 
 ## الحالة والاعتماديات
 
-`READY`. المهمة مستقلة عن M1/M2 لأنها واجهة عرض تستقبل بياناتها عبر مدخلات
+`REVIEW` في [PR #3](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/3). المهمة مستقلة عن M1/M2 لأنها واجهة عرض تستقبل بياناتها عبر مدخلات
 صريحة، بلا قراءة أو كتابة خادمية. لا تبدأ ربط Supabase في هذا الفرع.
 
 ## Skills used
 
 - planning-and-task-breakdown
 - documentation-and-adrs
+- frontend-ui-engineering
+- test-driven-development
+- graphify
+- strix-static-review
 
 ## Skills المقترحة للتنفيذ
 
@@ -48,7 +52,21 @@
 - اختبار Widget يثبت فتح قائمة الأخبار والعودة، ووجود تسميات قارئ الشاشة.
 - `dart format --output=none --set-exit-if-changed .` و`flutter analyze`
   و`flutter test` و`flutter build apk --debug` تمر في CI مع Secret scan.
-- PR مستقل على فرع `codex/`، ويُحدّث `Skills used` والأدلة بعد التنفيذ.
+- PR مستقل على فرع Claude مع worktree معزول لمراجعة Codex، وتُحدّث
+  `Skills used` والأدلة بعد التنفيذ.
+
+## أدلة المراجعة المحلية
+
+- أصلح Codex خطأين في `flutter analyze` على فرع Claude نفسه، وأضاف اختبار RTL
+  ودلالات قارئ الشاشة. كشف الاختبار دمج عنوان الخبر والشارات في عقدة واحدة،
+  ثم أثبت فصلها إلى عقد دلالية مستقلة.
+- `dart format --output=none --set-exit-if-changed .`: نجح بلا تغيير.
+- `flutter analyze`: نجح بلا ملاحظات.
+- `flutter test`: نجحت الاختبارات الـ14.
+- Graphify code-only أنشأ رسمًا محليًا مهملًا من Git. مراجعة Strix الساكنة
+  لم تجد ضمن فرق المهمة اتصالًا بالشبكة أو تعديل صلاحيات أو مالية أو أسرارًا.
+- `flutter build apk --debug`: نجح محليًا وأنتج `app-debug.apk`.
+- GitHub Actions يُوثق في PR بعد اكتماله.
 
 ## الرجوع
 
