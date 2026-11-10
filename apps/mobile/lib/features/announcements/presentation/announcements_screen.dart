@@ -48,6 +48,7 @@ class AnnouncementTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Semantics(
+              container: true,
               header: true,
               child: Text(
                 item.title,
@@ -62,14 +63,18 @@ class AnnouncementTile extends StatelessWidget {
                 spacing: 8,
                 children: [
                   if (item.isPinned)
-                    const Semantics(
+                    Semantics(
+                      container: true,
+                      excludeSemantics: true,
                       label: 'خبر مثبت',
-                      child: Chip(label: Text('مثبت')),
+                      child: const Chip(label: Text('مثبت')),
                     ),
                   if (item.isImportant)
-                    const Semantics(
+                    Semantics(
+                      container: true,
+                      excludeSemantics: true,
                       label: 'خبر مهم',
-                      child: Chip(label: Text('مهم')),
+                      child: const Chip(label: Text('مهم')),
                     ),
                 ],
               ),

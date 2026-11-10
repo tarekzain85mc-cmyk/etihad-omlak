@@ -1,7 +1,9 @@
 import 'package:etihad_omlak/app/theme/app_theme.dart';
 import 'package:etihad_omlak/features/announcements/domain/announcement.dart';
+import 'package:etihad_omlak/features/announcements/presentation/announcements_screen.dart';
 import 'package:etihad_omlak/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Announcement _a(
@@ -21,10 +23,7 @@ Announcement _a(
 Widget _dashboard(List<Announcement> items) => MaterialApp(
   locale: const Locale('ar'),
   supportedLocales: const [Locale('ar')],
-  localizationsDelegates: const [
-    DefaultMaterialLocalizations.delegate,
-    DefaultWidgetsLocalizations.delegate,
-  ],
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
   home: DashboardScreen(
     themeMode: AppThemeMode.light,
     onThemeChanged: (_) {},
@@ -79,5 +78,27 @@ void main() {
     await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
     expect(find.text('عمارة النخيل'), findsOneWidget);
+  });
+
+  testWidgets('Arabic news list is RTL with accessible title and badges', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    await tester.pumpWidget(
+      _dashboard([_a('p', 1, pinned: true, important: true)]),
+    );
+
+    await tester.tap(find.byKey(const Key('announcementsCard')));
+    await tester.pumpAndSettle();
+
+    final screen = tester.element(find.byType(AnnouncementsScreen));
+    expect(Directionality.of(screen), TextDirection.rtl);
+    expect(
+      tester.getSemantics(find.text('عنوان p')),
+      matchesSemantics(label: 'عنوان p', isHeader: true),
+    );
+    expect(find.bySemanticsLabel('خبر مثبت'), findsOneWidget);
+    expect(find.bySemanticsLabel('خبر مهم'), findsOneWidget);
+    semantics.dispose();
   });
 }
