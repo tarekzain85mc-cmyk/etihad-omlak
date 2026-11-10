@@ -55,7 +55,8 @@
 - `git diff --check`: مطلوب قبل كل commit.
 - Graphify: تحديث محلي بعد التغيير؛ مخرجات `graphify-out/` غير مرفوعة.
 - مراجعة Strix الساكنة: محلية فقط، بلا تشغيل Strix أو رفع مصدر أو فحص هدف حي.
-- Docker غير متاح محليًا؛ PostgreSQL parser (`pglast`) نجح على ملفات SQL الأربعة.
+- Docker غير متاح محليًا؛ PostgreSQL parser (`pglast`) نجح على migration وseed
+  وملفات الاختبار الأربعة.
 - على commit `9c8eeb8`: تشغيل [Database Tests #42788019576](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42788019576)
   نجح: `supabase start` و`db reset` و`db lint` و`test db`، بما فيها 30 assertion
   للمخطط و36 للعزل/القيود.
@@ -69,6 +70,13 @@
   [CI #42830637131](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42830637131)
   نجح على commit نفسه: فحص الأسرار وFlutter format/analyze/test وبناء APK Debug.
   ملف المصفوفة اجتاز `pglast` محليًا، وGraphify حدّث الرسم code-only محليًا.
+- على commit `dd0bfa1`: نجح [Database Tests #42834162450](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42834162450)
+  في 308 اختبارات pgTAP. تختبر 18 حالة جديدة حسابًا واحدًا رئيسًا في عمارة A
+  وساكنًا في B، مع حصر قراءة الجداول الثمانية وصلاحيات `manage_roles` و
+  `view_members` حسب العمارة. نجح [CI #42834162594](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42834162594)
+  في المحاولة الثانية: فحص الأسرار وFlutter format/analyze/test وبناء APK Debug.
+  فشلت المحاولة الأولى فقط بسبب انقطاع تنزيل Android NDK (`Premature EOF`).
+  الملف الجديد اجتاز `pglast` محليًا، وGraphify حدّث الرسم code-only؛ لم تتغير migration.
 - التشغيل الأول `42787497307` فشل بسبب وضع `UPDATE` داخل تعبير pgTAP غير صالح؛
   صُحح في `9c8eeb8`، ثم نجح التشغيل التالي. لا توجد دورة TDD حمراء/خضراء محلية
   لأن Docker غير متاح.
