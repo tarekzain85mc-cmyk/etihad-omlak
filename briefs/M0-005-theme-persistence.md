@@ -46,7 +46,8 @@
   خيار `--no-test-assets` تجاوز القفل دون أن يغيّر اختبارات الواجهة. سيعيد CI
   تشغيل الأمر العادي على Linux.
 - `flutter build apk --debug --no-pub` تعثر محليًا عند تنزيل AndroidX من
-  `dl.google.com` بسبب TLS/DNS؛ بناء GitHub Actions هو بوابة APK لهذه المهمة.
+  `dl.google.com` بسبب TLS/DNS؛ [CI #42796812478](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42796812478)
+  نجح على `4fd5489`، بما في ذلك `flutter test` العادي وبناء APK Debug وفحص الأسرار.
 - Graphify حدّث الرسم محليًا بنمط code-only: 179 عقدة و196 علاقة؛ المخرجات غير
   مرفوعة. مراجعة Strix الساكنة لم تجد أسرارًا أو بيانات سكان، وكشفت مشكلتي
   التنبيه وتسلسل الحفظ اللتين صُححتا مع اختبارات إعادة إنتاج.
