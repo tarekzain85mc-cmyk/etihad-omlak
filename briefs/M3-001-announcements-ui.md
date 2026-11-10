@@ -8,7 +8,8 @@
 
 ## الحالة والاعتماديات
 
-`REVIEW` في [PR #3](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/3). المهمة مستقلة عن M1/M2 لأنها واجهة عرض تستقبل بياناتها عبر مدخلات
+`COMPLETE` بعد دمج [PR #3](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/3)
+في `c9839c7`. المهمة مستقلة عن M1/M2 لأنها واجهة عرض تستقبل بياناتها عبر مدخلات
 صريحة، بلا قراءة أو كتابة خادمية. لا تبدأ ربط Supabase في هذا الفرع.
 
 ## Skills used
@@ -66,7 +67,9 @@
 - Graphify code-only أنشأ رسمًا محليًا مهملًا من Git. مراجعة Strix الساكنة
   لم تجد ضمن فرق المهمة اتصالًا بالشبكة أو تعديل صلاحيات أو مالية أو أسرارًا.
 - `flutter build apk --debug`: نجح محليًا وأنتج `app-debug.apk`.
-- GitHub Actions يُوثق في PR بعد اكتماله.
+- [CI #42839314159 على PR](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42839314159)
+  و[CI #42841162925 على main](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42841162925)
+  نجحا: Secret scan وFlutter format/analyze/test وبناء APK Debug.
 
 ## الرجوع
 
