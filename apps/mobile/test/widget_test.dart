@@ -45,7 +45,8 @@ void main() {
 
     expect(find.text('عمارة النخيل'), findsOneWidget);
     expect(find.text('المستحق على وحدتك'), findsOneWidget);
-    expect(find.text('إعلان مهم'), findsOneWidget);
+    expect(find.text('لا توجد أخبار منشورة بعد'), findsOneWidget);
+    expect(find.text('إعلان مهم'), findsNothing);
 
     final dashboardContext = tester.element(find.text('عمارة النخيل'));
     expect(ModalRoute.of(dashboardContext)?.settings.name, '/dashboard');

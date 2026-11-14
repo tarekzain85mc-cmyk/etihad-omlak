@@ -14,11 +14,11 @@
 - `M0-004` Supabase local structure ومخطط أولي بلا Production. `REVIEW`
   - [PR #1 المسودة](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/1)
     على فرع `phase/M0-004-supabase-foundation`؛
-    [Database Tests #42834162450](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42834162450)
-    و[CI #42834162594](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42834162594)
-    نجحا على `dd0bfa1` (CI في المحاولة الثانية بعد انقطاع تنزيل NDK)، بإجمالي
-    308 اختبارات pgTAP؛ تغطي القراءة للأدوار السبعة وحسابًا بدورين مختلفين عبر
-    عمارتين. تبقى اختبارات التغيير والتزامن في M1.
+    [Database Tests #42836735384](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42836735384)
+    و[CI #42836735346](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42836735346)
+    نجحا على `557f054`، بما فيها 308 اختبارات pgTAP. تتضمن المصفوفة حسابًا
+    واحدًا رئيسًا في عمارة وساكنًا في أخرى، وتغطي القراءة فقط؛ تغييرات الأدوار
+    والتزامن باقية في M1.
   - لا دمج أو تطبيق على Production قبل مراجعة بشرية للمخطط وRLS.
 - `M0-005` حفظ الثيم المختار محليًا عبر إعادة تشغيل التطبيق. `COMPLETE`
   - [PR #2](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/2)؛
@@ -29,8 +29,10 @@
 
 - مشروع `etihad-omlak` مفتوح في Antigravity ويستخدم `.agents/skills` وContext7.
 - منسق Claude Cloud مجدول يوميًا للمستودع؛ تشغيله الأول يوم 2026-11-10
-  اكتمل بلا تعديل لأن المهمة المتاحة كانت migration حساسة. مهارات Claude المحلية
-  وContext7 project MCP ما زالتا تتطلبان موافقة Workspace Trust وMCP داخل الجلسة المحلية.
+  اكتمل بلا تعديل لأن المهمة المتاحة كانت migration حساسة. في تشغيل ثانٍ يوم
+  2026-11-10 نفذ M3-001 عبر PR #3، وراجع Codex اختبارات الوصول ثم دُمجت
+  الواجهة. مهارات Claude المحلية وContext7 project MCP ما زالتا تتطلبان موافقة
+  Workspace Trust وMCP داخل الجلسة المحلية.
 - Antigravity Remote متاح في التطبيق، ومستودع GitHub ظاهر للاختيار، لكن مشروع
   Remote لاتحاد الملاك لم يُنشأ بعد؛ يحتاج تأكيد المالك قبل إتاحة الكود داخل
   بيئة Google السحابية. جلسة Remote الجارية تستطيع الاستمرار والجهاز مغلق،
@@ -40,6 +42,9 @@
 
 ## M1 — الهوية وعزل العمارات
 
+- `M1-001` بوابة Auth وعضوية Flutter. `READY` لمسودة Antigravity/Gemini على
+  فرع مستقل؛ [brief](../../briefs/M1-001-auth-client.md). لا دمج قبل مراجعة
+  PR #1 واختبار التكامل الخادمي. يتجنب منسق Claude تكرار هذه المهمة.
 - تسجيل البريد/الهاتف، الاسترجاع وOTP.
 - العمارات والوحدات والدعوات المغلقة.
 - استكمال RBAC/RLS وRPC الذرية واختبارات العزل والتزامن.
@@ -54,7 +59,11 @@
 
 - الأخبار والإشعارات والتصويت.
 - طلبات الصيانة والأمن وأوامر العمل.
-- `M3-001` واجهة الأخبار فقط. `READY` ومستقلة عن M1/M2؛
+- `M3-001` واجهة الأخبار فقط. `COMPLETE` في
+  [PR #3](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/3)
+  المدمج على `c9839c7`؛
+  [CI main #42841162925](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42841162925)
+  نجح، بما فيه 14 اختبار Flutter وSecret scan وبناء APK. المهمة مستقلة عن M1/M2؛
   [brief](../../briefs/M3-001-announcements-ui.md):
   - أزل الإعلان المثبت الوهمي من شاشة الإنتاج، واعرض حالة فارغة واضحة إلى أن
     تتوفر بيانات حقيقية. ابنِ مكوّنات تقبل أخبارًا عادية ومثبتة ومهمة عبر مدخلات
