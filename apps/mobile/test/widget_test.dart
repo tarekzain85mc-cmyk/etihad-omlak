@@ -85,9 +85,7 @@ void main() {
     await tester.tap(find.text('تباين عالٍ'));
     await tester.pumpAndSettle();
 
-    final fieldContext = tester.element(
-      find.byKey(const Key('identityField')),
-    );
+    final fieldContext = tester.element(find.byKey(const Key('identityField')));
     final inputTheme = Theme.of(fieldContext).inputDecorationTheme;
     final enabledBorder = inputTheme.enabledBorder;
     final focusedBorder = inputTheme.focusedBorder;
