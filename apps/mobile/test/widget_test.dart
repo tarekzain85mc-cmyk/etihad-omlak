@@ -75,6 +75,40 @@ void main() {
     expect(theme.colorScheme.onSurface, Colors.black);
   });
 
+  testWidgets('high contrast login fields keep a visible outline', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const EtihadApp());
+
+    await tester.tap(find.byTooltip('تغيير مظهر التطبيق'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('تباين عالٍ'));
+    await tester.pumpAndSettle();
+
+    final fieldContext = tester.element(
+      find.byKey(const Key('identityField')),
+    );
+    final inputTheme = Theme.of(fieldContext).inputDecorationTheme;
+    final enabledBorder = inputTheme.enabledBorder;
+    final focusedBorder = inputTheme.focusedBorder;
+
+    expect(enabledBorder, isA<OutlineInputBorder>());
+    expect(focusedBorder, isA<OutlineInputBorder>());
+    if (enabledBorder is! OutlineInputBorder ||
+        focusedBorder is! OutlineInputBorder) {
+      return;
+    }
+
+    expect(
+      enabledBorder.borderSide,
+      const BorderSide(color: Colors.black, width: 2),
+    );
+    expect(
+      focusedBorder.borderSide,
+      const BorderSide(color: Colors.black, width: 3),
+    );
+  });
+
   testWidgets('theme survives restart after changes on both app screens', (
     tester,
   ) async {
