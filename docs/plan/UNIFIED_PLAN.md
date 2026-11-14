@@ -24,6 +24,12 @@
   - [PR #2](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/2)؛
     [CI #42796812478](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42796812478)
     نجح على `4fd5489`: Secret scan وFlutter format/analyze و10 اختبارات وبناء APK Debug.
+- `M0-006` إتاحة APK Debug ناجح كملف CI قابل للتنزيل لمدة 14 يومًا. `REVIEW`
+  - [PR #6](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/6)؛
+    [CI #43592519416](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43592519416)
+    نجح على `c84647d` ورفع `etihad-omlak-debug-apk`. هذه نسخة Demo للواجهة
+    وليست إصدارًا أو دليلًا على اكتمال Auth أو العزل أو المالية؛
+    [brief](../../briefs/M0-006-test-apk-artifact.md).
 
 ## التشغيل المستمر
 
