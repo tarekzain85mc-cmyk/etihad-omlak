@@ -2,7 +2,7 @@
 
 ## الحالة والمسؤول
 
-`IN_PROGRESS` بواسطة Codex Cloud على فرع
+`REVIEW` بواسطة Codex Cloud على فرع
 `phase/M0-006-test-apk-artifact`. هذه مهمة CI مستقلة عن Auth وقاعدة البيانات،
 ولا تدمج أو تنشر إصدارًا على المتجر.
 
@@ -38,6 +38,15 @@
 - `flutter build apk --debug` ينجح.
 - Artifact باسم `etihad-omlak-debug-apk` يحتوي `app-debug.apk`.
 - لا أسرار ولا keystore ولا signing داخل Git أو Artifact.
+
+## الدليل
+
+- [CI #43592519416](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43592519416)
+  نجح على `c84647d`: Secret scan وعزل Strix وFlutter format/analyze و14 اختبارًا
+  وبناء APK Debug.
+- رفع Artifact باسم `etihad-omlak-debug-apk`، حجمه المضغوط 75,265,916 بايت،
+  وينتهي في 2026-11-28. Digest الأرشيف:
+  `sha256:46648744ab4ace73535ae9c9f58b9af784412b2d145523cf435a547f889ed11a`.
 
 ## الرجوع
 
