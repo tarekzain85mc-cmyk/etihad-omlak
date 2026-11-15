@@ -30,6 +30,13 @@
     نجح على `c84647d` ورفع `etihad-omlak-debug-apk`. هذه نسخة Demo للواجهة
     وليست إصدارًا أو دليلًا على اكتمال Auth أو العزل أو المالية؛
     [brief](../../briefs/M0-006-test-apk-artifact.md).
+- `M0-007` إظهار إطار حقول الدخول في ثيم التباين العالي. `REVIEW`
+  - ملاحظة QA مؤكدة على محاكي Android 15؛ [PR #7](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/7)
+    و[brief](../../briefs/M0-007-high-contrast-input-border.md).
+  - أثبت [CI الأحمر #43636682048](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43636682048)
+    أن الإطار كان غائبًا، ثم نجح [CI الأخضر #43636832202](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43636832202)
+    في 15 اختبارًا وSecret scan وformat/analyze وبناء APK Debug بعد الإصلاح.
+  - يلزم إعادة اختبار APK على Android 15 قبل تحويل المهمة إلى `COMPLETE`.
 
 ## التشغيل المستمر
 
@@ -53,7 +60,7 @@
   PR #1 واختبار التكامل الخادمي. يتجنب منسق Claude تكرار هذه المهمة.
 - تسجيل البريد/الهاتف، الاسترجاع وOTP.
 - العمارات والوحدات والدعوات المغلقة.
-- RBAC وRLS واختبارات العزل.
+- استكمال RBAC/RLS وRPC الذرية واختبارات العزل والتزامن.
 
 ## M2 — المالية والشفافية
 
