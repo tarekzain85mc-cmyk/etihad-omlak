@@ -11,7 +11,7 @@
   - GitHub Actions رقم `42698268081` نجح على commit `822ec20`.
   - Secret scan وعزل Strix وFlutter format/analyze/tests وبناء APK كلها ناجحة.
 - `M0-003` PRD، المعمارية وThreat Model. `COMPLETE`
-- `M0-004` Supabase local structure ومخطط أولي بلا Production. `REVIEW`
+- `M0-004` Supabase local structure ومخطط أولي بلا Production. `COMPLETE` (دُمج PR #1 على `d20031e`؛ CI وDatabase Tests على main نجحا، بلا تطبيق على Production)
   - [PR #1 المسودة](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/1)
     على فرع `phase/M0-004-supabase-foundation`؛
     [Database Tests #42836735384](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42836735384)
@@ -24,13 +24,13 @@
   - [PR #2](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/2)؛
     [CI #42796812478](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/42796812478)
     نجح على `4fd5489`: Secret scan وFlutter format/analyze و10 اختبارات وبناء APK Debug.
-- `M0-006` إتاحة APK Debug ناجح كملف CI قابل للتنزيل لمدة 14 يومًا. `REVIEW`
+- `M0-006` إتاحة APK Debug ناجح كملف CI قابل للتنزيل لمدة 14 يومًا. `COMPLETE` (دُمج PR #6 على `7d48c00`؛ [CI main #43691622839](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43691622839) ناجح)
   - [PR #6](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/6)؛
     [CI #43592519416](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43592519416)
     نجح على `c84647d` ورفع `etihad-omlak-debug-apk`. هذه نسخة Demo للواجهة
     وليست إصدارًا أو دليلًا على اكتمال Auth أو العزل أو المالية؛
     [brief](../../briefs/M0-006-test-apk-artifact.md).
-- `M0-007` إظهار إطار حقول الدخول في ثيم التباين العالي. `REVIEW`
+- `M0-007` إظهار إطار حقول الدخول في ثيم التباين العالي. `REVIEW` (دُمج PR #7 على `dbdaa7c`؛ بانتظار إعادة اختبار APK على Android 15)
   - ملاحظة QA مؤكدة على محاكي Android 15؛ [PR #7](https://github.com/tarekzain85mc-cmyk/etihad-omlak/pull/7)
     و[brief](../../briefs/M0-007-high-contrast-input-border.md).
   - أثبت [CI الأحمر #43636682048](https://github.com/tarekzain85mc-cmyk/etihad-omlak/actions/runs/43636682048)
